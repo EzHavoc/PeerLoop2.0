@@ -5440,6 +5440,11 @@ find-up@^5.0.0:
     locate-path "^6.0.0"
     path-exists "^4.0.0"
 
+firebase-hooks@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/firebase-hooks/-/firebase-hooks-0.0.1.tgz"
+  integrity sha512-U2IjGZLg0T7r0dMXG5+VWqL9nbvtbR6FWVzGP4eGd0hm/hLEkdYlsbGnv/Ue4C8iasTzY5hJMtq7rAClHKXsWQ==
+
 firebase@^9.23.0:
   version "9.23.0"
   resolved "https://registry.npmjs.org/firebase/-/firebase-9.23.0.tgz"
@@ -8725,6 +8730,11 @@ react-error-overlay@^6.0.11:
   version "6.0.11"
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
+
+react-firebase-hooks@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/react-firebase-hooks/-/react-firebase-hooks-5.1.1.tgz#fc92bb4b860c6753c806583f64d7f069b6ee6785"
+  integrity sha512-y2UpWs82xs+39q5Rc/wq316ca52QsC0n8m801V+yM4IC4hbfOL4yQPVSh7w+ydstdvjN9F+lvs1WrO2VYxpmdA==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"

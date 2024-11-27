@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import {db} from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 function SideBarOption({ Icon, title, addChannelOption}) { // Use consistent "title"
-    const addChannel = async () => {
+  
+  const addChannel = async () => {
         const channelName = prompt("Please enter the channel name!");
       
         if (channelName) {
@@ -75,6 +76,6 @@ const SideBarOptionContainer = styled.div`
 `;
 
 const SideBarOptionChannel = styled.div`
-  padding: 10px 0;
-  font-weight: 300;
+  padding: 10px 10px;
+  font-weight: 700;
 `;
