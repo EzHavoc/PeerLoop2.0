@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 function Message({ message = 'No message provided', timestamp, user = 'Unknown User', userImage }) {
-  const defaultImage = '/assets/user.png';
+  const defaultImage = './public/user.pnh';
 
   // Determine the user image URL
   const userImageUrl = userImage || user?.photoURL || defaultImage;

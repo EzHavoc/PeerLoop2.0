@@ -86,7 +86,7 @@ const SideBarContainer = styled.div`
 const SideBarHeader = styled.div`
   display: flex;
   border-bottom: 1px solid var(--peerloop-color);
-  padding: 13px;
+  padding: 15px;
   > .MuiSvgIcon-root {
     padding: 8px;
     color: white;
