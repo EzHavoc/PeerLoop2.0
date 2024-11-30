@@ -13,7 +13,7 @@ Peerloop is a  professional networking platform designed specifically for freela
     
 ## Installation
 
-Install peerloop with npm
+Clone PeerLoop!
 
 ```bash
 git clone [https://github.com/EzHavoc/PeerLoop2.0]
