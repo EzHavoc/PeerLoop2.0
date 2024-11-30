@@ -1,46 +1,121 @@
-# Getting Started with Create React App and Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+![Logo](https://i.ibb.co/cDcD2Fx/Peer-Loop-logo-removebg-preview.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+## PeerLoop
 
-### `npm start`
+Peerloop is a  professional networking platform designed specifically for freelancers, offering seamless communication and collaboration tools.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**This is a desktop website only!**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    
+## Installation
 
-### `npm run build`
+Clone PeerLoop!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone [https://github.com/EzHavoc/PeerLoop2.0]
+cd PeerLoop2.0/peerloop
+```
+Install Yarn (If not installed)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install yarn
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-gkty
-### `npm run eject`
+Install all dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+yarn install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run the Development Server
+```bash
+yarn start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The app will be available at http://localhost:3000.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+    
+## Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Project is deployed on https://peer-loop2-0.vercel.app/ 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Workflow
+
+![App Screenshot](https://i.ibb.co/J73hQkZ/roadmap.png)
+
+
+## Tech Stack
+
+**Frontend:**
+
+React.js – A dynamic JavaScript library for building fast user interfaces.
+
+React Router-Dom – Provides smooth navigation and routing for single-page applications.
+
+CSS3 – For responsive and modern design.
+
+**Backend:**
+
+Firebase Authentication – Secure login system with Google authentication.
+
+Firestore – Real-time NoSQL cloud database for storing user data and messages.
+
+**Security:**
+
+Google Secure Access Control – Firebase Authentication secures user access.
+
+SSL Encryption – All data is encrypted with SSL for safe communication.
+
+**State Management:**
+
+Redux – Centralized state management to ensure predictable updates across the app.
+
+**Version Control:**
+
+GitHub – Managed via GitHub for version control and collaborative development.
+
+
+
+## Key Features
+
+- **Real-Time Messaging** – Seamless, instant messaging with peers and clients.
+- **Freelancer Networking** – Build and maintain a professional network.
+- **Secure Authentication** – Sign in using Google or other secure methods.
+- **Collaboration Tools** – Work together with real-time updates, task sharing, and more.
+
+
+## Contributing
+
+We welcome contributions! Here’s how you can help:
+
+- Fork the repo
+- Create a new branch (git checkout -b feature-name)
+- Make your changes and commit (git commit -am 'Add feature')
+- Push to your branch (git push origin feature-name)
+- Open a Pull Request
+
+Or email us at BuildingPeerloop@gmail.com
+
+## Screenshots
+
+![App Screenshot](https://i.ibb.co/gZRmT78/Whats-App-Image-2024-11-30-at-21-37-09-c0e3b829.jpg)
+
+![App Screenshot](https://i.ibb.co/KcZnrvF/Whats-App-Image-2024-11-30-at-21-38-31-a1a8fcae.jpg)
+
+![App Screenshot](https://i.ibb.co/VpFFLXw/Whats-App-Image-2024-11-30-at-22-07-50-04953a3a.jpg)
+
+## Contributers
+
+- [@EzHavoc](https://github.com/EzHavoc/)
+- [@KushagraShukla30](https://github.com/KushagraShukla30/)
+- [@Madhuri-V-S](https://github.com/Madhuri-V-S/)
+- [@thund3rbird-17](https://github.com/thund3rbird-17/)
+- [@Ash-the-k](https://github.com/Ash-the-k/)
+
+
