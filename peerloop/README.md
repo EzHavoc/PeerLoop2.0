@@ -24,6 +24,13 @@ Install Yarn (If not installed)
 ```bash
 npm install yarn
 ```
+
+Install all dependencies
+
+```bash
+yarn install
+```
+
 Run the Development Server
 ```bash
 yarn start
