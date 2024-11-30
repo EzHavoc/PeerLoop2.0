@@ -23,7 +23,7 @@ function Login() {
 
 
         <h1>Sign in to PeerLoop!</h1>
-        <p>PeerLoop URL</p>
+        <p>Your Networking Haven!</p>
 
         <Button onClick={signIn} variant="contained" color="primary">
           Sign in with Google
