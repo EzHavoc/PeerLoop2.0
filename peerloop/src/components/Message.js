@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 function Message({ message = 'No message provided', timestamp, user = 'Unknown User', userImage }) {
-  const defaultImage = './public/user.pnh';
-
-  // Determine the user image URL
-  const userImageUrl = userImage || user?.photoURL || defaultImage;
+    const defaultImage = '/user.png';  // Corrected image path
+  
+    // Determine the user image URL
+    const userImageUrl = userImage || user?.photoURL || defaultImage;
 
   // Check if timestamp is valid and format it
   let formattedTimestamp = 'Time not available';
@@ -37,7 +37,11 @@ function Message({ message = 'No message provided', timestamp, user = 'Unknown U
 
   return (
     <MessageContainer>
-      <UserImage src={userImageUrl} alt={`${user}'s avatar`} />
+      <UserImage
+        src={userImageUrl}
+        alt={`${user}'s avatar`}
+        onError={(e) => e.target.src = defaultImage}  // Fallback to default image on error
+      />
       <MessageInfo>
         <UserDetails>
           {user}
