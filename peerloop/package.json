@@ -1,4 +1,5 @@
 {
+  "license": "MIT",
   "name": "peerloop",
   "version": "0.1.0",
   "private": true,
@@ -11,14 +12,15 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.5.2",
-    "firebase": "^9.23.0",
+    "firebase": "^11.0.2",
     "firebase-hooks": "^0.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-firebase-hooks": "^5.0.0",
+    "react-firebase-hooks": "^5.1.1",
     "react-redux": "^8.1.3",
     "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
+    "react-spinkit": "^3.0.0",
     "styled-components": "^6.1.13",
     "web-vitals": "^2.1.4"
   },
@@ -45,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }

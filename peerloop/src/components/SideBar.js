@@ -13,12 +13,14 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AddIcon from "@mui/icons-material/Add";
 import SideBarOption from './SideBarOption';
-import { db } from "../firebase";
+import { db, auth } from "../firebase"; // Import Firebase auth
 import { useCollection } from "react-firebase-hooks/firestore";
 import { collection } from "firebase/firestore";
+import { useAuthState } from 'react-firebase-hooks/auth'; // Import useAuthState hook
 
 const SideBar = () => {
   const [channels, loading, error] = useCollection(collection(db, "rooms"));
+  const [user] = useAuthState(auth); // Retrieve the currently logged-in user
 
   if (loading) {
     return <p>Loading channels...</p>;
@@ -35,7 +37,7 @@ const SideBar = () => {
           <h2>PEERLOOP</h2>
           <h3>
             <FiberManualRecordIcon />
-            KANISHK SINGH
+            {user?.displayName || "User"} {/* Show user's name dynamically */}
           </h3>
         </SideBarInfo>
         <CreateIcon />
@@ -65,6 +67,7 @@ const SideBar = () => {
 
 export default SideBar;
 
+// Styled Components
 const SideBarContainer = styled.div`
   background-color: var(--peerloop-bar);
   height: 100vh;

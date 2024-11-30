@@ -4,7 +4,13 @@ import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountBoxIcon from '@mui/icons-material/AccountBox'; // Keep AccountBoxIcon
 import HelpIcon from '@mui/icons-material/Help';
+import { auth } from '../firebase';
+import { Avatar } from '@mui/material';
+import { useAuthState } from 'react-firebase-hooks/auth'; // Import useAuthState
+
 function Header() {
+  const [user] = useAuthState(auth); // Use useAuthState to manage authentication state
+
   return (
     <HeaderContainer>
       {/* Left Section */}
@@ -12,14 +18,18 @@ function Header() {
         <HeaderAccountBoxIcon />
         <HeaderAccessTimeFilledIcon />
       </HeaderLeft>
-
+      <HeaderAvatar
+        onClick={() => auth.signOut()}
+        alt={user?.displayName || "User"}
+        src={user?.photoURL || ""}
+      />
       {/* Search Section */}
       <HeaderSearch>
         <SearchIcon />
         <input type="text" placeholder="Search Peer!" />
       </HeaderSearch>
       <HeaderRight>
-        <HeaderHelpIcon/>
+        <HeaderHelpIcon />
       </HeaderRight>
     </HeaderContainer>
   );
@@ -27,7 +37,7 @@ function Header() {
 
 export default Header;
 
-// Styled Components
+// Styled Components (same as in your code)
 const HeaderContainer = styled.div`
   display: flex;
   position: fixed;
@@ -39,7 +49,7 @@ const HeaderContainer = styled.div`
   color: black;
 `;
 
-const HeaderLeft= styled.div`
+const HeaderLeft = styled.div`
   flex: 0.2;
   display: flex;
   align-items: center;
@@ -74,11 +84,12 @@ const HeaderSearch = styled.div`
     flex: 1;
   }
 `;
+
 const HeaderRight = styled.div`
-flex: 0.3;
-display: flex;
-align-items: flex-end;
-> .MuiSvgIcon-root {
+  flex: 0.3;
+  display: flex;
+  align-items: flex-end;
+  > .MuiSvgIcon-root {
     margin-left: auto;
     margin-right: 30px;
   }
@@ -86,7 +97,7 @@ align-items: flex-end;
 
 const HeaderAccountBoxIcon = styled(AccountBoxIcon)`
   cursor: pointer;
-  color:white;
+  color: white;
   &.MuiSvgIcon-root {
     font-size: 40px; /* Set your custom size */
   }
@@ -95,6 +106,7 @@ const HeaderAccountBoxIcon = styled(AccountBoxIcon)`
     opacity: 0.8;
   }
 `;
+
 const HeaderAccessTimeFilledIcon = styled(AccessTimeFilledIcon)`
   cursor: pointer;
   color: white;
@@ -106,6 +118,7 @@ const HeaderAccessTimeFilledIcon = styled(AccessTimeFilledIcon)`
     opacity: 0.8;
   }
 `;
+
 const HeaderHelpIcon = styled(HelpIcon)`
   cursor: pointer;
   color: white;
@@ -114,6 +127,14 @@ const HeaderHelpIcon = styled(HelpIcon)`
     font-size: 40px; /* Set your custom size */
   }
   margin-right: 10px;
+  :hover {
+    opacity: 0.8;
+  }
+`;
+
+const HeaderAvatar = styled(Avatar)`
+  cursor: pointer;
+
   :hover {
     opacity: 0.8;
   }

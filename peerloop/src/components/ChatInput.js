@@ -2,53 +2,63 @@ import React, { useState } from 'react';
 import styled from "styled-components";
 import { Button } from '@mui/material';
 import { db } from '../firebase';
-import firebase from 'firebase/compat/app';
+import { collection, addDoc, serverTimestamp, doc } from "firebase/firestore";
+import { getAuth } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function ChatInput({ channelName, channelId }) {
-    const [input, setInput] = useState("");
+  const auth = getAuth(); // Initialize auth before using it
+  const [user] = useAuthState(auth); // Use auth here
+  const [input, setInput] = useState("");
 
-    const sendMessage = (e) => {
-        e.preventDefault(); // Prevent page refresh on form submission
-        if (!channelId) return; // Do nothing if no channelId
+  const sendMessage = async (e) => {
+    e.preventDefault();
 
-        db.collection("rooms")
-            .doc(channelId)
-            .collection("messages")
-            .add({
-                message: input,
-                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                user: "Kanishk Singh",
-                userImage: "https://reactpersonalportfolio-olive.vercel.app/assets/img-B6tjFmrE.jpg",
-            });
+    if (!channelId || input.trim() === "") return;
 
-        setInput(""); // Clear input field after sending
-    };
+    try {
+      const roomRef = doc(db, 'rooms', channelId);
+      const messagesRef = collection(roomRef, 'messages');
 
-    return (
-        <ChatInputContainer>
-            <form onSubmit={sendMessage}>
-                <input
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    placeholder={`Message #${channelName || 'ROOM'}`}
-                />
-                <StyledButton type="submit">
-                    SEND
-                </StyledButton>
-            </form>
-        </ChatInputContainer>
-    );
+      await addDoc(messagesRef, {
+        message: input,
+        timestamp: serverTimestamp(),
+        user: user?.displayName || 'Your Name',
+        userImage: user?.photoURL || 'image.png'
+      });
+
+      setInput("");
+      console.log("Message sent!");
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
+  };
+
+  return (
+    <ChatInputContainer>
+      <form onSubmit={sendMessage}>
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder={`Message #${channelName || 'ROOM'}`}
+        />
+        <StyledButton type="submit">
+          SEND
+        </StyledButton>
+      </form>
+    </ChatInputContainer>
+  );
 }
 
 export default ChatInput;
 
 // Styled Components
 const ChatInputContainer = styled.div`
-  position: fixed; /* Fix the container to the bottom of the chat section */
+  position: fixed;
   bottom: 0;
-  left: 240px; /* Adjust to match the sidebar width */
-  width: calc(100% - 240px); /* Occupy remaining space beside the sidebar */
-  background-color: white; /* Optional: Match your theme */
+  left: 240px;
+  width: calc(100% - 240px);
+  background-color: white;
   border-top: 1px solid lightgray;
   padding: 10px;
 
@@ -65,7 +75,7 @@ const ChatInputContainer = styled.div`
     padding: 15px;
     outline: none;
     font-size: 16px;
-    margin-right: 10px; /* Space between input and button */
+    margin-right: 10px;
   }
 `;
 
